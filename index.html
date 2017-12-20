@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+	<meta name="theme-color" content="#4F4F4F">
+    <!-- <meta name="viewport" content="width=device-width,initial-scale=1.0"> -->
+    <title>y</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet" type="text/css">
+	  <!-- <style type="text/css"> -->
+	   <!-- .is_overlay{ display: block; width: 100%; height: 100%; } -->
+		<!-- #fireplace { -->
+			<!-- position: fixed; -->
+			<!-- top: 0; right: 0; bottom: 0; left: 0; -->
+			<!-- overflow: hidden; -->
+		<!-- } -->
+
+		<!-- #fireplace > video { -->
+			<!-- position: absolute; -->
+			<!-- top: 0; -->
+			<!-- left: 0; -->
+			<!-- width: 100%; -->
+			<!-- height: 100%; -->
+		<!-- } -->
+	  <!-- </style> -->
+	  <style>
+		.is_overlay{ display: block; width: 100%; height: 100%; }
+			
+			#preloader {
+				margin: auto; 
+				left: 0; top: 0; right: 0; bottom: 0; 
+				position: absolute;
+				width: 4em;				
+				height: 4em;
+				text-align: center;
+				vertical-align: middle;
+				transition: opacity .3s;
+				-webkit-transition: opacity .3s;
+				-moz-transition: opacity .3s;
+				-ms-transition: opacity .3s;
+				-o-transition: opacity .3s;
+				background-color: black;
+				border: 1px solid black;
+				border-radius: 10px;
+				padding: 5px;
+			}
+
+			#wait { 
+				-webkit-animation: spin 1.2s infinite linear; 
+				-moz-animation: spin 1.2s infinite linear; 
+				-ms-animation: spin 1.2s infinite linear; 
+				-o-animation: spin 1.2s infinite linear; 
+				animation: spin 1.2s infinite linear; 
+				font-size: 4em;
+				color: white;
+			}
+			
+
+			body {
+				background-color: black;
+			}
+
+			#fireplace {
+				position: fixed;
+				top: 0; right: 0; bottom: 0; left: 0;
+				overflow: hidden;
+			}
+			#fireplace > video {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+
+			/* 1. No object-fit support: */
+			@media (min-aspect-ratio: 16/9) {
+				#fireplace > video { height: 300%; top: -100%; }
+			}
+			@media (max-aspect-ratio: 16/9) {
+				#fireplace > video { width: 300%; left: -100%; }
+			}
+			/* 2. If supporting object-fit, overriding (1): */
+			@supports (object-fit: cover) {
+				#fireplace > video {
+					top: 0; left: 0;
+					width: 100%; height: 100%;
+					object-fit: cover;
+				}
+			}
+
+			#enter {
+				position: fixed;
+				z-index: 100;
+				right: 3em;
+				bottom: 3em;
+				opacity: 0;
+				transition: opacity 9.3s;
+				-webkit-transition: opacity 9.3s;
+				-moz-transition: opacity 9.3s;
+				-ms-transition: opacity 9.3s;
+				-o-transition: opacity 9.3s;
+			}
+	  </style>
+  </head>
+  <body>
+    
+	<div id="fireplace" class="is_overlay">
+		<video id="video" style="
+								left: 0px;
+								top: -6.5px;
+								width: 100%;
+								height: auto;
+								display: block;
+								opacity: 1;"
+						oncontextmenu="return false"
+						onended="_w.VM &amp;&amp; VM.pause();"
+						src="https://bingfilestore.blob.core.windows.net/homepage/app/YuleLog2014/1080/Fireplace_GettyRR_98571085_1080.mp4" preload="auto" autoplay="" loop="" autobuffer="autobuffer">
+		</video>
+		<audio id="aud_yule" style="visibility: hidden;" src="https://bingfilestore.blob.core.windows.net/homepage/app/YuleLog2014/audio/CozyFireplace_GettyRR_553682_96kbps.mp3" autoplay="" loop=""></audio>
+	</div>
+  </body>
+</html>
